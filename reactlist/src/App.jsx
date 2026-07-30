@@ -1,18 +1,36 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import editIcon from "./assets/edit-icon.svg.svg"
 import trashIcon from "./assets/trash-icon.svg.svg"
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import axios from 'axios'
 
 function App() {
-  const [tasklist, setTasklist] = useState([
-    {id: 1, descricao: "Revisar HTML Semântico"},
-    {id: 2, descricao: "Revisar ReactJS"},
-    {id: 3, descricao: "Revisar ReactJS"},
-    {id: 4, descricao: "Estudar React native"},
-  ])
+  const [tasklist, setTasklist] = useState([]);
+  //Read (Get)
+  const getTaks = async () => {
+    try {
+      const APIReturn = await axios.get("http://localhost:3000/taskpoin")
+      const dataAPI = await APIReturn.data
+      console.log(dataAPI)
+      // e armazenar os dados no state (tasklist)
+      setTasklist(dataAPI)
+    } catch (error) {
+      
+    }
+  }
+  //Create (Post)
+  const createTaks = () => {}
+  //Update (Put)
+  const putTaks = () => {}
+  // Delete (Delete)
+  const deleteTaks = () => {}
+  // roda na montagem do componente - ciclo de vida dos componentes React
+  useEffect(()=>{
+    getTaks()
+  }, [])
 
   return (
     <>
