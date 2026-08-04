@@ -1,12 +1,21 @@
 {
-    "taskpoin": [
-        {"id": 1, "descricao": "Revisar HTML Semântico"
-        },
-        {"id": 2, "descricao": "Revisar ReactJS"
-        },
-        {"id": 3, "descricao": "Revisar ReactJS"
-        },
-        {"id": 4, "descricao": "Estudar React native"
-        }
-    ]
+  "taskpoin": [
+    {
+      "id": "1",
+      "descricao": "Revisar HTML Semântico"
+    },
+    {
+      "id": "2",
+      "descricao": "Revisar ReactJS"
+    },
+    {
+      "descricao": "Revisar ReactJs",
+      "id": "3"
+    },
+    {
+      "descricao": "Estudar React native",
+      "id": "4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
